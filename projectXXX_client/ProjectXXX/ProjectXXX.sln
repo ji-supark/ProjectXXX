@@ -1,14 +1,18 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-
+Project("{E2B2EA35-C1B2-4E9D-0640-E2EA4AD52E25}") = "ProjectXXX", "Assembly-CSharp-firstpass.csproj", "{609244E3-51F4-6F53-46A5-6C0E30BEA90E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-
+		{609244E3-51F4-6F53-46A5-6C0E30BEA90E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{609244E3-51F4-6F53-46A5-6C0E30BEA90E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{609244E3-51F4-6F53-46A5-6C0E30BEA90E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{609244E3-51F4-6F53-46A5-6C0E30BEA90E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,5 +36,4 @@ Global
 		$3.inheritsScope = text/plain
 		$3.scope = text/plain
 	EndGlobalSection
-
 EndGlobal

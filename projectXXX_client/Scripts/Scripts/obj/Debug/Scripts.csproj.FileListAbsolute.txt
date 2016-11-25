@@ -24,7 +24,6 @@ C:\ProjectXXX\projectXXX_client\Scripts\Scripts\bin\Debug\Unity.SerializationLog
 C:\ProjectXXX\projectXXX_client\Scripts\Scripts\bin\Debug\Unity.DataContract.dll
 C:\ProjectXXX\projectXXX_client\Scripts\Scripts\bin\Debug\ICSharpCode.NRefactory.dll
 C:\ProjectXXX\projectXXX_client\Scripts\Scripts\bin\Debug\Unity.UNetWeaver.dll
-C:\ProjectXXX\projectXXX_client\Scripts\Scripts\bin\Debug\nunit.framework.dll
 C:\ProjectXXX\projectXXX_client\Scripts\Scripts\bin\Debug\Unity.CecilTools.dll
 C:\ProjectXXX\projectXXX_client\Scripts\Scripts\bin\Debug\Mono.Cecil.Pdb.dll
 C:\ProjectXXX\projectXXX_client\Scripts\Scripts\bin\Debug\Mono.Cecil.Mdb.dll
@@ -33,3 +32,10 @@ C:\ProjectXXX\projectXXX_client\Scripts\Scripts\bin\Debug\UnityEngine.xml
 C:\ProjectXXX\projectXXX_client\Scripts\Scripts\obj\Debug\Scripts.csprojResolveAssemblyReference.cache
 C:\ProjectXXX\projectXXX_client\Scripts\Scripts\obj\Debug\Scripts.dll
 C:\ProjectXXX\projectXXX_client\Scripts\Scripts\obj\Debug\Scripts.pdb
+C:\ProjectXXX\projectXXX_client\Scripts\Scripts\bin\Debug\EasingAnimation.dll
+C:\ProjectXXX\projectXXX_client\Scripts\Scripts\bin\Debug\UnityEditor.dll
+C:\ProjectXXX\projectXXX_client\Scripts\Scripts\bin\Debug\UnityEditor.UI.dll
+C:\ProjectXXX\projectXXX_client\Scripts\Scripts\bin\Debug\UnityEngine.dll
+C:\ProjectXXX\projectXXX_client\Scripts\Scripts\bin\Debug\UnityEngine.UI.dll
+C:\ProjectXXX\projectXXX_client\Scripts\Scripts\bin\Debug\UnityEditor.UI.xml
+C:\ProjectXXX\projectXXX_client\Scripts\Scripts\bin\Debug\UnityEngine.UI.xml
