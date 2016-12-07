@@ -34,6 +34,7 @@
     <Reference Include="EasingAnimation">
       <HintPath>..\..\ProjectXXX\Assets\Plugins\EasingAnimation.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -58,19 +59,32 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Archve\AssetArchive.cs" />
+    <Compile Include="Asset\Factory\ScriptableObjectFactor.cs" />
+    <Compile Include="UI\UIElement.cs" />
+    <Compile Include="UI\UIBase.cs" />
+    <Compile Include="Character\CharacterBase.cs" />
+    <Compile Include="Asset\Factory\ArtAssetFactory.cs" />
+    <Compile Include="Asset\Factory\CachedAsset.cs" />
+    <Compile Include="Asset\Factory\GameObjectFactory.cs" />
     <Compile Include="Asset\AssetManager.cs" />
+    <Compile Include="Asset\Factory\AssetFactory.cs" />
     <Compile Include="Game\GameMain.cs" />
     <Compile Include="Game\GameManager.cs" />
+    <Compile Include="UI\UIManager.cs" />
+    <Compile Include="UI\UIOption.cs" />
+    <Compile Include="UI\UITest.cs" />
     <Compile Include="Util\SingleTon.cs" />
     <Compile Include="Game\Dungeon.cs" />
     <Compile Include="Game\Lobby.cs" />
-    <Compile Include="Game\UITitle.cs" />
+    <Compile Include="UI\UITitle.cs" />
     <Compile Include="Game\Title.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy /Y "$(TargetDir)Scripts.dll" "C:\projectXXX\projectXXX_client\ProjectXXX\Assets\Plugins"</PostBuildEvent>

@@ -39,3 +39,4 @@ C:\ProjectXXX\projectXXX_client\Scripts\Scripts\bin\Debug\UnityEngine.dll
 C:\ProjectXXX\projectXXX_client\Scripts\Scripts\bin\Debug\UnityEngine.UI.dll
 C:\ProjectXXX\projectXXX_client\Scripts\Scripts\bin\Debug\UnityEditor.UI.xml
 C:\ProjectXXX\projectXXX_client\Scripts\Scripts\bin\Debug\UnityEngine.UI.xml
+C:\ProjectXXX\projectXXX_client\Scripts\Scripts\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll

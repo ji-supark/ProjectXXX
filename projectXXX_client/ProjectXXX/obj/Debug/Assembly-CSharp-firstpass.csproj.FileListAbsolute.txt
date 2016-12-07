@@ -21,3 +21,4 @@ C:\ProjectXXX\projectXXX_client\ProjectXXX\Temp\bin\Debug\UnityEngine.UI.xml
 C:\ProjectXXX\projectXXX_client\ProjectXXX\Temp\bin\Debug\UnityEngine.Networking.xml
 C:\ProjectXXX\projectXXX_client\ProjectXXX\obj\Debug\Assembly-CSharp-firstpass.dll
 C:\ProjectXXX\projectXXX_client\ProjectXXX\obj\Debug\Assembly-CSharp-firstpass.pdb
+C:\ProjectXXX\projectXXX_client\ProjectXXX\Temp\bin\Debug\UIspriteAnimation.dll

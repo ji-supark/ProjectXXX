@@ -21,3 +21,5 @@ C:\ProjectXXX\projectXXX_client\ProjectXXX\Temp\bin\Debug\UnityEngine.Networking
 C:\ProjectXXX\projectXXX_client\ProjectXXX\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\ProjectXXX\projectXXX_client\ProjectXXX\obj\Debug\Assembly-CSharp.dll
 C:\ProjectXXX\projectXXX_client\ProjectXXX\obj\Debug\Assembly-CSharp.pdb
+C:\ProjectXXX\projectXXX_client\ProjectXXX\Temp\bin\Debug\UIspriteAnimation.dll
+C:\ProjectXXX\projectXXX_client\ProjectXXX\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
