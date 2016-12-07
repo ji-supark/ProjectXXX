@@ -24,16 +24,18 @@ public class UIManager : SingleTon<UIManager>
 
         if (result == null)
         {
-            result = AssetManager.Instance.UI.Retrieve(uiName);
+            result = AssetManager.Instance.UI.Retrieve(uiName, parameters);
             m_uis.Add(result);
             result.transform.SetParent(m_canvas.transform,false);
             return result;
         }
 
+
         if (AssetState.Waiting == result.AssetState)
         {
-            return AssetManager.Instance.UI.Retrieve(uiName);
-            
+            result = AssetManager.Instance.UI.Retrieve(uiName, parameters);
+            result.transform.SetAsLastSibling();
+            return result;         
         }
         else
         {
@@ -53,5 +55,8 @@ public class UIManager : SingleTon<UIManager>
         }
         result.Restore();
     }
-   
+    public void ClearUI()
+    {
+        m_uis.Clear();
+    }
 }

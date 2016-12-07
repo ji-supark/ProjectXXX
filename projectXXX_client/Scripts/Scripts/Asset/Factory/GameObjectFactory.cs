@@ -14,7 +14,21 @@ public class GameObjectFactory<T> : AssetFactory where T : CachedAsset
 
     public override void DestroyAllAsset()
     {
+        foreach (KeyValuePair<string, List<T>> p in m_createdObjects)
+        {
+            p.Value.ForEach(rhs => Object.Destroy(rhs.gameObject));
+            p.Value.Clear();
+        }
+        m_createdObjects.Clear();
+
+        List<int> intList = new List<int>();
+        intList.Add(10);
+        foreach(int p in intList)
+        {
+
+        }
     }
+
 
     public void InitNode()
     {
@@ -50,7 +64,7 @@ public class GameObjectFactory<T> : AssetFactory where T : CachedAsset
             //찾아서 존재한다면 
             if (null != existed)
             {
-                existed.Initialize(parameters);
+                existed.OnInitialize(parameters);
                 existed.Use();
                 Debug.Log(string.Format("리소스 {0}을 사용중 상태로 만듭니다", existed.name));
                 return existed;

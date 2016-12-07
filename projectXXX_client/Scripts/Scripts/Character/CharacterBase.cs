@@ -9,10 +9,6 @@
     {
     }
 
-    internal override void Initialize(object[] parameters)
-    {
-    }
-
     internal override void OnInitialize(params object[] parameters)
     {
     }

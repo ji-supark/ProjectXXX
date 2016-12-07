@@ -70,5 +70,4 @@ public abstract class CachedAsset : MonoBehaviour
     internal abstract void OnInitialize(params object[] parameters);
     protected abstract void OnUse();
     protected abstract void OnRestore();
-    internal abstract void Initialize(object[] parameters);
 }

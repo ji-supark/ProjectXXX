@@ -32,5 +32,10 @@ public class AssetManager : SingleTon<AssetManager>
     {
         get { return m_assetFactoryList[AssetType.Image] as ArtAssetFactory<Sprite>; }
     }
-
+    public void DestroyAll()
+    {
+        UI.DestroyAllAsset();
+        Image.DestroyAllAsset();
+        Character.DestroyAllAsset();
+    }
 }

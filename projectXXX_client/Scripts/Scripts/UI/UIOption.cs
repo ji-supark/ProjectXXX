@@ -1,8 +1,14 @@
 ﻿
+using UnityEngine;
+
 public class UIOption : UIBase
 {
-    public void CloseSelf()
+    protected override void OpenComplete()
     {
-        UIManager.Instance.Close("UIOption");
+
+    }
+    protected override void CloseComplete()
+    {
+
     }
 }
