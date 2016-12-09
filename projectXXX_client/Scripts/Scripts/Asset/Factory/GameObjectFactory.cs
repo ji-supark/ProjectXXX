@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class GameObjectFactory<T> : AssetFactory where T : CachedAsset
 {
-    private bool isContainResource;
+    // private bool isContainResource;
     private Dictionary<string, List<T>> m_createdObjects = new Dictionary<string, List<T>>();
     private GameObject m_resourceNode = null;
 
@@ -11,24 +11,6 @@ public class GameObjectFactory<T> : AssetFactory where T : CachedAsset
     {
         InitNode();
     }
-
-    public override void DestroyAllAsset()
-    {
-        foreach (KeyValuePair<string, List<T>> p in m_createdObjects)
-        {
-            p.Value.ForEach(rhs => Object.Destroy(rhs.gameObject));
-            p.Value.Clear();
-        }
-        m_createdObjects.Clear();
-
-        List<int> intList = new List<int>();
-        intList.Add(10);
-        foreach(int p in intList)
-        {
-
-        }
-    }
-
 
     public void InitNode()
     {
@@ -49,19 +31,25 @@ public class GameObjectFactory<T> : AssetFactory where T : CachedAsset
         }
     }
 
+    public override void DestroyAllAsset()
+    {
+        foreach (KeyValuePair<string, List<T>> p in m_createdObjects)
+        {
+            p.Value.ForEach(rhs => Object.Destroy(rhs.gameObject));
+            p.Value.Clear();
+        }
+        m_createdObjects.Clear();
+    }
 
     public T Retrieve(string resourceName, params object [] parameters)
-        {  
-            //m_createdObjects에서 resourceName이 있는지 찾아본다.
-            bool isContainsResource = m_createdObjects.ContainsKey(resourceName);
+    {  
+         
+        bool isContainsResource = m_createdObjects.ContainsKey(resourceName);
 
-            //너가 찾으라고 명한 resourceName이 존재한다.
-            if (true == isContainsResource)
+        if (true == isContainsResource)
         {
-            //그 resourceName과 매칭이 된 List<T> 에서 AssetState.Waiting을 찾는다 
             T existed = m_createdObjects[resourceName].Find(rhs => AssetState.Waiting == rhs.AssetState) as T;
             
-            //찾아서 존재한다면 
             if (null != existed)
             {
                 existed.OnInitialize(parameters);
@@ -91,11 +79,11 @@ public class GameObjectFactory<T> : AssetFactory where T : CachedAsset
             tComponent.ResourceNode = m_resourceNode.transform;
         }
         
-        if (false == isContainResource)
+        if (false == isContainsResource)
         {
-            m_createdObjects[resourceName] = new List<T>();
+              m_createdObjects[resourceName] = new List<T>();
         }
-        
+
         m_createdObjects[resourceName].Add(tComponent);
 
         if (null != tComponent.ResourceNode)
@@ -107,6 +95,5 @@ public class GameObjectFactory<T> : AssetFactory where T : CachedAsset
         tComponent.Use();
 
         return tComponent;
-        }
-
+    }
 }

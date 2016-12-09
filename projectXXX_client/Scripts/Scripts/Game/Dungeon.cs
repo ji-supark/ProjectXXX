@@ -2,8 +2,7 @@
 
 public class Dungeon : GameMain
 {
-    public void Awake()
+    public override void OnFocus()
     {
-        Debug.Log("Dungeonstart");
     }
 }

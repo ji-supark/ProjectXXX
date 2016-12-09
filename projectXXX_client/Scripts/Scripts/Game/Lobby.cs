@@ -1,9 +1,13 @@
-﻿using UnityEngine;
-
+﻿
 public class Lobby : GameMain
 {
     public void Awake()
     {
-        Debug.Log("lobbystart");
+        UIBase ui = UIManager.Instance.Open("UILobbyMenu");
+        ui.transform.SetAsFirstSibling();
+    }
+        public override void OnFocus()
+    {
+
     }
 }

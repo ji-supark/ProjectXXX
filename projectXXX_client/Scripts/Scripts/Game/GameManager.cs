@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections;
-
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class GameManager : MonoSingleTon<GameManager>
 {
-    private string m_sceneName;
     private UILoading m_loading;
+
     public void ChangeScene(string name)
     {
         if (true == string.IsNullOrEmpty(name))
@@ -15,13 +13,14 @@ public class GameManager : MonoSingleTon<GameManager>
             return;
         }
 
-        m_sceneName = name;
-
         AssetManager.Instance.DestroyAll();
+        //화면 다 없앰
         UIManager.Instance.ClearUI();
+        //UI 관리 레이어 클리어
 
+        #region fade
         UIFade ui = UIManager.Instance.Open("UIFade") as UIFade;
-        ui.m_openCallback = () => // 화면이 완전히 까메졌을때
+        ui.m_openCallback = () =>
         {
             m_loading = UIManager.Instance.Open("UILoading") as UILoading;
             m_loading.transform.SetAsFirstSibling();
@@ -30,33 +29,33 @@ public class GameManager : MonoSingleTon<GameManager>
         {
             StartCoroutine(StartChangeScene(name));
         };
+        #endregion
     }
-
 
     private IEnumerator StartChangeScene(string name)
     {
-        Debug.Log("진짜씬변경을시작하자");
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(name);
 
         while (false == asyncOperation.isDone)
         {
             m_loading.progress(asyncOperation.progress);
             yield return null;
-          
-     
-            //asyncOperation.progress
-            // 이 퍼센트를 UI로딩의 게이지에 적용시켜라
-            // Debug.Log(string.Format("씬로딩퍼센트 : {0} {1} {2}", asyncOperation.progress));
         }
         yield return new WaitForSeconds(1.0f);
 
-        m_loading.progress(1.0f); 
+        m_loading.progress(1.0f);
 
-        //UI의 게이지바를 100%로 강제로 변경해라
+        #region fade
         UIFade ui = UIManager.Instance.Open("UIFade") as UIFade;
         ui.m_openCallback = () =>
         {
             UIManager.Instance.Close("UILoading");
         };
+        ui.m_closeCallback = () =>
+        {
+            GameMain gameMain = GameObject.Find(SceneManager.GetActiveScene().name).GetComponent<GameMain>();
+            gameMain.OnFocus();
+        };
+        #endregion
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-
 public class UIFade : UIBase
 {
     //화면이 다 어두워졌을떄 불러지는 콜백
@@ -9,14 +8,11 @@ public class UIFade : UIBase
 
     protected override void OpenComplete()
     {
-        Restore();
         if (null != m_openCallback)
         {
             m_openCallback();
         }
-
         Restore();
-     // 로딩창을 열어준다
     }
     protected override void CloseComplete()
     {

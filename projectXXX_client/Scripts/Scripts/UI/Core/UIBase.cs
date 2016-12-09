@@ -1,10 +1,18 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum UIType
+{
+    Contents,
+    Popup,
+    Loading,
+}
+
 public abstract class UIBase : CachedAsset
 {
+    public UIType m_uiType;
+
     protected abstract void OpenComplete();
     protected abstract void CloseComplete();
 
@@ -21,17 +29,15 @@ public abstract class UIBase : CachedAsset
 
     protected override void OnUse()
     {
+        gameObject.SetActive(true);
         float openTime = 0.0f;
  
         for(int i = 0; i < m_elementList.Count; ++i)
         {
-            //각UI Element에서 OpenAnimation 이라는 함수를 실행하고 그 애니메이션 플레이타임을 리턴해준다
-            Debug.Log(2);
             float animationTime = m_elementList[i].OpenAnimation();
 
             openTime = openTime < animationTime ? animationTime : openTime;
         }
-        Debug.Log(3);
         StartCoroutine(Open(openTime));
     }
 
@@ -42,7 +48,6 @@ public abstract class UIBase : CachedAsset
 
         for (int i = 0; i < m_elementList.Count; ++i)
         {
- 
             float animationTime = m_elementList[i].CloseAnimation();
 
             closeTime = closeTime < animationTime ? animationTime : closeTime;

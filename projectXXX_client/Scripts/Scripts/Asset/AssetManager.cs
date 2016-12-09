@@ -10,16 +10,15 @@ public enum AssetType
 
 public class AssetManager : SingleTon<AssetManager>
 {
-    public Dictionary<AssetType, AssetFactory> m_assetFactoryList = new Dictionary<AssetType, AssetFactory>();
+    private Dictionary<AssetType, AssetFactory> m_assetFactoryList = new Dictionary<AssetType, AssetFactory>();
 
-        private AssetManager()
+    private AssetManager()
     {
-        m_assetFactoryList[AssetType.UI] = new GameObjectFactory<UIBase>("ui");
-        m_assetFactoryList[AssetType.Image] = new ArtAssetFactory<Sprite>("image");
+        m_assetFactoryList[AssetType.UI]        = new GameObjectFactory<UIBase>("ui");
+        m_assetFactoryList[AssetType.Image]     = new ArtAssetFactory<Sprite>("image");
         m_assetFactoryList[AssetType.Character] = new GameObjectFactory<CharacterBase>("character");
- 
+       // m_assetFactoryList[AssetType.Skill] = new GameObjectFactory<Skill>("skill");
     }
-
     public GameObjectFactory<UIBase> UI
     {
         get { return m_assetFactoryList[AssetType.UI] as GameObjectFactory<UIBase>; }

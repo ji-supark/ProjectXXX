@@ -61,10 +61,12 @@
   <ItemGroup>
     <Compile Include="Archve\AssetArchive.cs" />
     <Compile Include="Asset\Factory\ScriptableObjectFactor.cs" />
+    <Compile Include="Skill\Skill.cs" />
     <Compile Include="UI\UILoading.cs" />
+    <Compile Include="UI\UILobbyMenu.cs" />
     <Compile Include="UI\UILogo.cs" />
-    <Compile Include="UI\UIElement.cs" />
-    <Compile Include="UI\UIBase.cs" />
+    <Compile Include="UI\Core\UIElement.cs" />
+    <Compile Include="UI\Core\UIBase.cs" />
     <Compile Include="Character\CharacterBase.cs" />
     <Compile Include="Asset\Factory\ArtAssetFactory.cs" />
     <Compile Include="Asset\Factory\CachedAsset.cs" />
@@ -73,7 +75,7 @@
     <Compile Include="Asset\Factory\AssetFactory.cs" />
     <Compile Include="Game\GameMain.cs" />
     <Compile Include="Game\GameManager.cs" />
-    <Compile Include="UI\UIManager.cs" />
+    <Compile Include="UI\Core\UIManager.cs" />
     <Compile Include="UI\UIOption.cs" />
     <Compile Include="UI\UIFade.cs" />
     <Compile Include="Util\MonoSingleTon.cs" />

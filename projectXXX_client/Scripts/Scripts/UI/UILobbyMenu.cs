@@ -1,14 +1,15 @@
-﻿using System;
+﻿
+
 using UnityEngine;
 
-public class UILogo : UIBase
+public class UILobbyMenu : UIBase
 {
     protected override void OpenComplete()
     {
-        UIManager.Instance.Open("UITitle");
-    }
 
+    }
     protected override void CloseComplete()
     {
+
     }
 }

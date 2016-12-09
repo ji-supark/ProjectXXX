@@ -5,7 +5,6 @@ public class UIManager : SingleTon<UIManager>
 {
     private List<UIBase> m_uis = new List<UIBase>();
     private Canvas m_canvas;
-    private Object eventSystem;
 
     private UIManager()
     {
@@ -13,7 +12,7 @@ public class UIManager : SingleTon<UIManager>
         m_canvas = GameObject.Instantiate(m_canvas);
         GameObject.DontDestroyOnLoad(m_canvas);
 
-        eventSystem = Resources.Load("EventSystem") as GameObject;
+        GameObject eventSystem = Resources.Load("EventSystem") as GameObject;
         eventSystem = GameObject.Instantiate(eventSystem);
         GameObject.DontDestroyOnLoad(eventSystem);
     }
@@ -26,10 +25,23 @@ public class UIManager : SingleTon<UIManager>
         {
             result = AssetManager.Instance.UI.Retrieve(uiName, parameters);
             m_uis.Add(result);
-            result.transform.SetParent(m_canvas.transform,false);
+
+            switch (result.m_uiType)
+            {
+                case UIType.Contents:
+                    result.transform.SetParent(m_canvas.transform.FindChild(UIType.Contents.ToString()), false);
+                    break;
+                case UIType.Popup:
+                    result.transform.SetParent(m_canvas.transform.FindChild(UIType.Popup.ToString()), false);
+                    break;
+                case UIType.Loading:
+                    result.transform.SetParent(m_canvas.transform.FindChild(UIType.Loading.ToString()), false);
+                    break;
+            }
+            result.transform.SetParent(m_canvas.transform, false);
+
             return result;
         }
-
 
         if (AssetState.Waiting == result.AssetState)
         {
